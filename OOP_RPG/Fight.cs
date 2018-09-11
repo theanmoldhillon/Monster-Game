@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace OOP_RPG
 {
@@ -20,17 +21,17 @@ namespace OOP_RPG
         }
         
         public void AddMonster(string name, int strength, int defense, int hp) {
-            var monster = new Monster();
-            monster.Name = name;
-            monster.Strength = strength;
-            monster.Defense = defense;
-            monster.OriginalHP = hp;
-            monster.CurrentHP = hp;
+            var monster = new Monster(name, strength, defense, hp, hp);
             this.Monsters.Add(monster);
         }
         
         public void Start() {
-            var enemy = this.Monsters[0];
+            var randomMonsters = Monsters.OrderBy(p => Guid.NewGuid()).FirstOrDefault();
+            var lessThanTwentyHitPoints = this.Monsters.Where(p => p.CurrentHP < 20).FirstOrDefault();
+            var strengthOfAtLeastEleven = this.Monsters.Where(p => p.Strength >= 11).FirstOrDefault();
+            var secondMonster = this.Monsters[1];
+            var lastMonster = this.Monsters.Last();
+            var enemy = randomMonsters;
             Console.WriteLine("You've encountered a " + enemy.Name + "! " + enemy.Strength + " Strength/" + enemy.Defense + " Defense/" + 
             enemy.CurrentHP + " HP. What will you do?");
             Console.WriteLine("1. Fight");
