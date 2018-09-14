@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +8,7 @@ namespace OOP_RPG
 {
     class Potion : Itemm
     {
-	 public int HP { get; set; }
+        public int HP { get; set; }
         public string Name { get; set; }
         public int OriginalValue { get; set; }
         public int ResellValue { get; set; }
@@ -19,5 +19,5 @@ namespace OOP_RPG
             this.Name = name;
             this.OriginalValue = originalvalue;
             this.ResellValue = resellvalue;
+        }
     }
-}
