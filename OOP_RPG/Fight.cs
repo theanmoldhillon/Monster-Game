@@ -41,10 +41,20 @@ namespace OOP_RPG
             Console.WriteLine("You've encountered a " + monster.Name + "! " + monster.Strength + " Strength/" + monster.Defense + " Defense/" +
             monster.CurrentHP + " HP. What will you do?");
             Console.WriteLine("1. Fight");
+            Console.WriteLine("2. Run");
+            Console.WriteLine("3. Heal");
             var input = Console.ReadLine();
             if (input == "1")
             {
                 this.HeroTurn();
+            }
+            else if (input == "2")
+            {
+                this.Run();
+            else if (input == "3")
+                {
+                    this.Heal();
+                }
             }
             else
             {
@@ -118,7 +128,13 @@ namespace OOP_RPG
             Console.WriteLine("You've been defeated! :( GAME OVER.");
             return;
         }
+        public void Run()
+        {
+        }
 
+        public void Heal()
+        {
+        }
     }
 
 }

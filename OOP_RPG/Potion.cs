@@ -21,3 +21,4 @@ namespace OOP_RPG
             this.ResellValue = resellvalue;
         }
     }
+}
