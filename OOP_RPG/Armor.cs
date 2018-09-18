@@ -1,7 +1,7 @@
 using System;
 namespace OOP_RPG
 {
-    public class Armor : Itemm
+    public class Armor : Item
     {
         public Armor(string name, int defense, int originalvalue, int resellvalue)
         {

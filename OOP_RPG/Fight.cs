@@ -32,7 +32,7 @@ namespace OOP_RPG
 
         public void AddMonster(string name, int strength, int defense, int hp)
         {
-            var monster = new Monster(name, strength, defense, hp, hp);
+            var monster = new Monster(name, strength, defense, hp);
             this.Monsters.Add(monster);
         }
 
@@ -48,14 +48,7 @@ namespace OOP_RPG
             {
                 this.HeroTurn();
             }
-            else if (input == "2")
-            {
-                this.Run();
-            else if (input == "3")
-                {
-                    this.Heal();
-                }
-            }
+            
             else
             {
                 this.game.Main();
@@ -128,13 +121,7 @@ namespace OOP_RPG
             Console.WriteLine("You've been defeated! :( GAME OVER.");
             return;
         }
-        public void Run()
-        {
-        }
-
-        public void Heal()
-        {
-        }
+        
     }
 
 }

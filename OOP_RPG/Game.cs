@@ -6,12 +6,10 @@ namespace OOP_RPG
     public class Game
     {
         public Hero hero { get; set; }
-        Shop Shop { get; set; }
 
         public Game()
         {
             this.hero = new Hero();
-            this.Shop = new Shop(this, this.hero);
         }
 
         public void Start()
@@ -29,6 +27,7 @@ namespace OOP_RPG
             Console.WriteLine("1. View Stats");
             Console.WriteLine("2. View Inventory");
             Console.WriteLine("3. Fight Monster");
+            Console.WriteLine("4. Shop");
             var input = Console.ReadLine();
             if (input == "1")
             {
@@ -41,6 +40,10 @@ namespace OOP_RPG
             else if (input == "3")
             {
                 this.Fight();
+            }
+            else if (input == "4")
+            {
+                this.Shop();
             }
             else
             {
@@ -68,6 +71,11 @@ namespace OOP_RPG
         {
             var fight = new Fight(this.hero, this);
             fight.Start();
+        }
+        public void Shop()
+        {
+            var shop = new Shop(this);
+            shop.Menu();
         }
 
 
